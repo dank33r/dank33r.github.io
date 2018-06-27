@@ -1,0 +1,201 @@
+<?xml version="1.0" encoding="utf-8"?>
+<search>
+  <entry>
+    <title><![CDATA[上传本地分支到github项目分支]]></title>
+    <url>%2F2018%2F06%2F27%2Fgit-commit-to-new-branch%2F</url>
+    <content type="text"><![CDATA[123456789$ mkdir blog$ cd blog$ git init$ git add .$ git commit -a -m &quot;The first commit.&quot;$ git branch new_branch$ git checkout new_branch$ git remote add origin git@github.com:userid/project.git$ git push origin new_branch]]></content>
+      <categories>
+        <category>操作系统</category>
+      </categories>
+      <tags>
+        <tag>实用技巧</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[Github上fork出来的项目与上游分支同步]]></title>
+    <url>%2F2018%2F06%2F25%2Fforked-branch-update%2F</url>
+    <content type="text"><![CDATA[对于在Github上fork出来的项目，与master同步时可以考虑使用以下步骤。 查看自己的远程分支，如果还没有设置上游分支那么设置需要同步的master为upstream。这个例子中由于我们还没有配置上游分支，所以需要添加fork项目的master为upstream。12345➜ opencc git:(master) git remote -vorigin https://github.com/yourname/opencc.git (fetch)origin https://github.com/yourname/opencc.git (push)➜ opencc git:(master) git remote add upstream https://github.com/opencc/opencc.git 从上游仓库获取到分支及相关的提交信息，并将它们保存在本地的upstream/master分支。 1➜ opencc git:(master) git fetch upstream 把upstream/master分支合并到本地的master，这时本地master分支便与上游仓库保持同步了，并且没有丢失本地的任何修改。 12➜ opencc git:(master) git merge upstream/master➜ opencc git:(master) git push]]></content>
+      <categories>
+        <category>操作系统</category>
+      </categories>
+      <tags>
+        <tag>实用技巧</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[黑白摄影]]></title>
+    <url>%2F2018%2F06%2F22%2Fphoto-bw%2F</url>
+    <content type="text"><![CDATA[http://www.michaelkenna.net 受到爱德华.维斯顿影响的黑白摄影（7x7风格）]]></content>
+      <categories>
+        <category>摄影</category>
+      </categories>
+      <tags>
+        <tag>摄影技巧</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[Tmux commands]]></title>
+    <url>%2F2018%2F06%2F22%2Ftumx-cmd%2F</url>
+    <content type="text"><![CDATA[12345678910111213141516171819tmux 开启tmux tmux ls 显示已有tmux列表（C-b s） tmux attach-session -t 数字 选择tmux C-b c 创建一个新的窗口 C-b n 切换到下一个窗口 C-b p 切换到上一个窗口 C-b l 最后一个窗口,和上一个窗口的概念不一样哟,谁试谁知道 c-b w 通过上下键选择当前窗口中打开的会话 C-b 数字 直接跳到你按的数字所在的窗口 C-b &amp; 退出当前窗口 C-b d 临时断开会话 断开以后,还可以连上的哟:) C-b &quot; 分割出来一个窗口 C-b % 分割出来一个窗口 C-b o 在小窗口中切换 C-b (方向键) C-b ! 关闭所有小窗口 C-b x 关闭当前光标处的小窗口 C-b t 钟表 C-b pageup/pagedow]]></content>
+      <categories>
+        <category>操作系统</category>
+      </categories>
+      <tags>
+        <tag>实用技巧</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[Unpack RPM package]]></title>
+    <url>%2F2018%2F06%2F22%2Funpack-rpm%2F</url>
+    <content type="text"><![CDATA[To extract RPM file using rpm2cpio and cpio command, type: 1$ rpm2cpio your_rpm.x86_64.rpm | cpio -idmv]]></content>
+      <categories>
+        <category>操作系统</category>
+      </categories>
+      <tags>
+        <tag>实用技巧</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[RTC Example]]></title>
+    <url>%2F2018%2F06%2F22%2Frtc-example%2F</url>
+    <content type="text"><![CDATA[Things to be used for CLI demo set SCM CLI env1setenv PATH &lt;install_dir&gt;/jazz/scmtools/eclipse:$PATH Use help12scm helpscm help list login1scm login -c -r https://jazz07.abc.com:21443/jazz -u user@abc.com -n repo list streams1scm list streams -r repo list workspaces from all users1scm list workspaces -r repo list workspaces of one user1scm list workspaces -r repo -c user@abc.com create workspace1scm create workspace -r repo -s &quot;pmc_mainline&quot; pmc_mainline_ws1 load workspace1scm load -r repo &quot;pmc_mainline_ws1&quot; change a file locally12cd pmc/etc/vi pmcstart.sh show changes1scm status -C show change history for a file1scm history pmcstart.sh diff from workspace1scm diff file pmcstart.sh diff from stream1scm diff file pmcstart.sh stream &quot;pmc_mainline&quot; diff from a specific changeset1scm diff file pmcstart.sh changeset 1623 diff from others workspace1scm diff file Makefile workspace &quot;(tang) pmc_mainline WS&quot; checkin changes1scm checkin pmcstart.sh add comment in a changeset1scm changeset comment 1701 &quot;add a line in pmcstart.sh from CLI&quot; link a workitem with a changeset1scm changeset associate 1701 1159 deliver a changeset1scm deliver -c 1701 show last 5 change sets1scm list changesets -r repo -w pmc_mainline_ws1 -m 5 list changes in one change set1scm list changes 1701 unload workspace1scm workspace unload -D -r repo -w &quot;pmc_mainline_ws1&quot; delete a workspace1scm workspace delete -r repo &quot;pmc_mainline_ws1&quot; logout1scm logout -r repo accept changes, accept all changes for one component1scm accept -C pmc accept changes from a changesetscm1scm accept -c 1701 View conflict12scm status -C (view Outgoing and Incoming changes with &quot;!&quot; - conflict)scm diff file &lt;conflicted file&gt; stream &lt;target stream&gt; (view conflicted diff) Accept incoming change(with conflict)12scm accept &lt;incoming changeset&gt; -v -i (view conflict in &gt;&gt;&gt;&gt; ==== &lt;&lt;&lt;&lt; format in sandbox)scm status -C (view the &quot;#&quot; added in outgoing changeset) Resolve conflict, use workspace version:1scm resolve -c &lt;conflicted file&gt; use incoming version:1scm resolve -p &lt;conflicted file&gt; Manual merger use workspace version (manually edit conflicted file by referencing &gt;&gt;&gt;&gt; ==== &lt;&lt;&lt;&lt;)1234scm checkin &lt;conflicted file&gt; -c &lt;existing outgoing changeset&gt; (add resolved changes to existing changeset)scm resolve -c &lt;conflicted file&gt; (use workspace version to resolve the conflict)scm status -C (view no conflict sign &quot;!&quot; or &quot;#&quot;)scm deliver -c &lt;outgoing change set&gt; Change follow target12scm workspace change-target &lt;current workspace&gt; &lt;target workspace&gt; (change workspace flow target)scm workspace change-target &quot;pmc_mainline_ws1&quot; &quot;pmc_mainline_ws2&quot;]]></content>
+      <categories>
+        <category>RTC</category>
+      </categories>
+      <tags>
+        <tag>RTC</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[Windows操作系统下删除环境变量]]></title>
+    <url>%2F2018%2F06%2F22%2Fwin-del-env%2F</url>
+    <content type="text"><![CDATA[在cmd中输入set test= 那是临时的，不会影响系统全局变量的。 以下两条命令可以保存为批处理也可手动在cmd上执行。 1234@Echo OffReg Delete &quot;HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\Session Manager\Environment&quot; /v &quot;TEST&quot; /f 2&gt;nulReg Delete &quot;HKEY_CURRENT_USER\Environment&quot; /v &quot;TEST&quot; /f 2&gt;nulPause]]></content>
+      <categories>
+        <category>操作系统</category>
+      </categories>
+      <tags>
+        <tag>实用技巧</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[PMPI Win2008 HPC R2]]></title>
+    <url>%2F2018%2F06%2F22%2Fpmpi-2008-hpc%2F</url>
+    <content type="text"><![CDATA[PCMPI_HPC_SINGLEQUOTE_ENV is a must for Windows2008 HPC R2, if MPI_ROOT has space.]]></content>
+      <categories>
+        <category>MPI</category>
+      </categories>
+      <tags>
+        <tag>PMPI</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[PMPI CUDA Support]]></title>
+    <url>%2F2018%2F06%2F22%2Fpmpi-cuda%2F</url>
+    <content type="text"><![CDATA[12PMPI_GPU_AWARE=1PMPI_CUDAIPC_ENABLE=1]]></content>
+      <categories>
+        <category>MPI</category>
+      </categories>
+      <tags>
+        <tag>PMPI</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[SPEC2007 127.wrf2 build error]]></title>
+    <url>%2F2018%2F06%2F22%2Fspec-build-err%2F</url>
+    <content type="text"><![CDATA[SPEC2007 127.wrf2 gfortran build errorrsl_mpi_compat.c中第112行.1xargc = iargc_()+1; 改为1xagc = _gfortran_iargc()+1;]]></content>
+      <categories>
+        <category>MPI</category>
+      </categories>
+      <tags>
+        <tag>PMPI</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[IB网卡固件升级]]></title>
+    <url>%2F2018%2F06%2F22%2Fx365-firm%2F</url>
+    <content type="text"><![CDATA[x365服务器IB网卡固件升级1234&gt; C:\2012r2\tools\mlxburn.exe -qq -force -d mt4099_pci_cr0 -fw&gt; C:\2012r2\Firmware\2.30.3200\fw-ConnectX3-rel.mlx -conf&gt; C:\2012r2\Firmware\2.30.3200\00D9551_Ax.ini -exp_rom_dir &gt; C:\2012r2\Firmware\2.30.3200\exp_rom -exp_rom AUTO]]></content>
+      <categories>
+        <category>硬件</category>
+      </categories>
+      <tags>
+        <tag>Infiniband</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[Cannot create shared memory segment of N bytes problem]]></title>
+    <url>%2F2018%2F06%2F22%2Fcannot-create-mem%2F</url>
+    <content type="text"><![CDATA[MPID: Cannot create shared memory segment of N bytes problemTo increase the shared memory size to 256 MB, for example, as root, edit the /etc/sysctl.conf file by modifying or adding the line:1kernel.shmmax=268435456 To increase the shared memory size without rebooting, use:1% /sbin/sysctl -w kernel.shmmax=1684354560 If you have your kernel configured with the /proc file system and it is mounted, then the current maximum shared memory segment size (in bytes) can be viewed by the following command:1% cat /proc/sys/kernel/shmmax]]></content>
+      <categories>
+        <category>MPI</category>
+      </categories>
+      <tags>
+        <tag>PMPI</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[PMPI算法选择表]]></title>
+    <url>%2F2018%2F06%2F22%2Falgo-select-table%2F</url>
+    <content type="text"><![CDATA[生成算法选择表1$ mpirun -IBV -hostlist hb05b01:8,hb05b02:8,hb05b03:8,hb05b04:8,hb05b05:8,hb05b06:8,hb05b07:8,hb05b08:8 -aff=automatic:latency -e PCMPI_SYSTEM_CHECK=BM -e MPI_COLL_OUTPUT_FILE=scatter64r.dat -e MPI_COLL_OUTPUT_FILE_ASCII=scatter64r.imb -e MPI_COLL_OUTPUT_FILE_ORDER=scatter64r.c -e MPI_OPTIONAL=allow_ascii -e MPI_COLL_PRINT=1 sc 使用生成的算法选择表1$MPI_ROOT/bin/mpirun –e PCMPI_COLL_BIN_FILE=&lt;file&gt; ./a.out MPI_COLL_BM_TEST_COLL = only algorithm to test]]></content>
+      <categories>
+        <category>MPI</category>
+      </categories>
+      <tags>
+        <tag>PMPI</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[Spec2007 Install]]></title>
+    <url>%2F2018%2F06%2F22%2Fspec-inst%2F</url>
+    <content type="text"><![CDATA[Install We need get latest SPEC2007 package; for now it is version 2.0. ISO and tar ball both work well. I have download them under following location. 1234&gt; ls /scratch/dev9/lchen/spec2007/ -lhtotal 4.6G-rw-r--r-- 1 pmpibot lsf 2.4G Jan 17 2010 mpi2007-2.0.iso-rw-r--r-- 1 pmpibot lsf 2.3G Jan 17 2010 mpi2007-2.0.tar.bz2 Mount ISO or untar the tar ball. 1&gt; sudo mount -o loop mpi2007-2.0.iso your_dir or1&gt; tar jxvf mpi2007-2.0.tar.bz2 Change to SPEC2007 source directory and run install.sh. 12&gt; cd your_dir&gt; ./install.sh -d dest_dir Build Before build SPEC2007, you need install PMPI7.x/8.0, OpenMPI and Scali-MPI(PMPI5.6.7). After install complete you need source the environment. In rest of “build” section we will use PMPI8.0 as an example. Setup compile environment. Suppose you installed SPEC2007 at /pmpi/work/lchen/spec2007v2 and using Intel compiler on AMD64 platform, then you need go following steps. 1234&gt; source /pcc/app/intel_compiler/11.1/bin/ifortvars.sh intel64 (suppose you're using bash)&gt; source /pcc/app/intel_compiler/11.1/bin/iccvars.sh intel64&gt; cd /pmpi/work/lchen/spec2007v2&gt; source shrc Save following configuration files in $SPEC/config directory. 123456789101112131415161718192021222324252627282930313233343536373839404142434445464748495051525354555657585960616263646566676869707172&gt; cat pmpi8_amd64.cfgaction=build%define CMD_PREFIX ulimit -s 326780;absolutely_no_loecking=0tune=baseenv_vars=1makeflags = -j 4ext=pmpi8FC = mpif90 -mpif90 ifortCC = mpicc -mpicc iccCXX= mpiCC -mpicxx icpcmedium=default=default=default: BOPTS= -O3 -ipo -IPF_fp_relaxed COPTIMIZE = $&#123;BOPTS&#125; FOPTIMIZE = $&#123;BOPTS&#125;CXXOPTIMIZE = $&#123;BOPTS&#125;EXTRA_LDFLAGS= -i-staticuse_submit_for_speed=1121.pop2:CPORTABILITY= -DSPEC_MPI_CASE_FLAG127.wrf2:CPORTABILITY = -DSPEC_MPI_CASE_FLAG -DSPEC_MPI_LINUX include: app_pmpi8_amd64.cfg&gt; cat app_pmpi8_amd64.cfgmedium=base=default=default:%if !defined(%&#123;MPIRUN_OPTIONS&#125;)%define MPIRUN_OPTIONS%endif%if !defined(%&#123;CMD_PREFIX&#125;)%define CMD_PREFIX%endif%warning using MPIRUN_OPTIONS %&#123;MPIRUN_OPTIONS&#125;%ifdef %&#123;appfile&#125;%warning using appfile modesubmit= \$SPEC/rungenappfile $command &gt;appfile ; %&#123;CMD_PREFIX&#125; \$MPI_ROOT/bin/mpirun %&#123;MPIRUN_OPTIONS&#125; -f appfile%elif defined(%&#123;hostfile&#125;)%warning using hostfile mode%if '%&#123;hostfile&#125;' eq '1'%define machfile machinefile%else%define machfile %&#123;hostfile&#125;%endifsubmit= %&#123;CMD_PREFIX&#125; \$MPI_ROOT/bin/mpirun %&#123;MPIRUN_OPTIONS&#125; -np $ranks -hostfile \$SPEC/%&#123;hostfile&#125; $command%elif defined(%&#123;cmdline&#125;)%warning using cmdline modesubmit= %&#123;CMD_PREFIX&#125; \$MPI_ROOT/bin/mpirun -np $ranks %&#123;MPIRUN_OPTIONS&#125; -lsb_mcpu_hosts $command%else%warning exit without run%endif Run following command in $SPEC and it will build medium dataset for SPEC2007. 1&gt; runspec --config=pmpi8_amd64 medium Run benchmark with PMPIYou can issue following commands to run SPEC2007. 12&gt; cd $SPEC&gt; runspec --config=pmpi8_amd64 --action=run -I --size mref --iterations=1 --ranks 16 --define hostfile=hosts medium Above command suppose you’re running medium suite 1 time with pmpi8_amd64.cfg as configuration file and using mtest data size. The benchmark will run 16 ranks on all hosts which your “hosts” defined. The “hosts” file must under $SPEC directory and with following format. 12345&gt; cat hostshost1host2host3host4 Run benchmark with OpenMPIPlease save following configuration in your config directory and then issue “runspec –config=openmpi_amd64 medium” to run benchmark with medium date suite. 1234567891011121314151617181920212223242526&gt; cat config/openmpi_amd64.cfg%define CMD_PREFIX ulimit -s 326780;absolutely_no_locking=0tune=baseenv_vars=1makeflags = -j 4ext=openmpiFC = mpif90CC = mpiccCXX= mpiCCmedium=default=default=default: BOPTS= -O3 -ipo -IPF_fp_relaxed COPTIMIZE = $&#123;BOPTS&#125; FOPTIMIZE = $&#123;BOPTS&#125;CXXOPTIMIZE = $&#123;BOPTS&#125;EXTRA_LDFLAGS= -i-staticuse_submit_for_speed=1submit=mpirun --hostfile hosts -np $ranks $command &gt; runspec --ranks 16 --size mref --config=openmpi_amd64 medium Run benchmark with ScaliMPIPlease save following configuration in your config directory and then issue.]]></content>
+      <categories>
+        <category>MPI</category>
+      </categories>
+      <tags>
+        <tag>PMPI</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[PMPI Connection closed by remote host issue]]></title>
+    <url>%2F2018%2F06%2F22%2Fclose-by-remote-issue%2F</url>
+    <content type="text"><![CDATA[PMPI - “ssh exchange identification: Connection closed by remote host” issueDescriptionSome time when we need start many mpid using ssh the system will complain ‘ssh_exchange_identification: Connection closed by remote host’ error. For example issues following command, on hpgpu01 and hpgpu02 there are 12 cores each. 1$ mpirun -np 24 -hostlist hpgpu01,hpgpu02 hw Solutions1) Change “MaxStartups” to values more than “10” in /etc/ssh/sshd_config. 1MaxStartups 1000 2) Define a small value less than 20 of MPI_MAX_REMSH.]]></content>
+      <categories>
+        <category>MPI</category>
+      </categories>
+      <tags>
+        <tag>PMPI</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[PMPI Fortran 90]]></title>
+    <url>%2F2018%2F06%2F22%2Ffort90-pmpi%2F</url>
+    <content type="text"><![CDATA[PMPI Fortran 90 for LinuxTo use the ‘mpi’ Fortran 90 module, you must create the module file by compiling the module.F file in /opt/platform_mpi/include/64/module.F for 64-bit compilers. For 32-bit compilers, compile the module.F file in /opt/platform_mpi/include/32/module.F. Notes:Each vendor (e.g., PGI, Qlogic/Pathscale, Intel, Gfortran, etc.) has a different module file format. Because compiler implementations vary in their representation of a module file, a PGI module file is not usable with Intel and so on. Additionally, forward compatibility might not be the case from older to newer versions of a specific vendor’s compiler. Because of compiler version compatibility and format issues, we do not build module files. In each case, you must build (just once) the module that corresponds to ‘mpi’ with the compiler you intend to use. For example, with platform_mpi/bin and pgi/bin in path:pgf90 -c /opt/platform_mpi/include/64/module.F 123$ ls $MPI_ROOT/include/64/*.mod/opt/ibm/platform_mpi/include/64/mpi_constants.mod/opt/ibm/platform_mpi/include/64/mpi.mod Example of hello_f90.f90 12345678910program mainuse mpiimplicit noneinteger :: ierr, rank, sizecall MPI_INIT(ierr)call MPI_COMM_RANK(MPI_COMM_WORLD, rank, ierr)call MPI_COMM_SIZE(MPI_COMM_WORLD, size, ierr)print *, &quot;Hello, world, I am &quot;, rank, &quot; of &quot;, sizecall MPI_FINALIZE(ierr)End Run it: 123$ mpif90 -mpif90 pgf90 hello_f90.f90$ mpirun ./a.outHello, world, I am 0 of 1]]></content>
+      <categories>
+        <category>MPI</category>
+      </categories>
+      <tags>
+        <tag>PMPI</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[CESM Build]]></title>
+    <url>%2F2018%2F06%2F22%2Fcesm-pmpi%2F</url>
+    <content type="text"><![CDATA[Create a new case1create_newcase -case ../../test1 -res f45_g37 -compset X -mach platform -compiler intel Compiling with following options1234567891011cmake \-D Trilinos_ENABLE_ALL_PACKAGES:BOOL=ON \-D BUILD_SHARED_LIBS:BOOL=ON \-D Trilinos_ENABLE_TESTS:BOOL=OFF \-D CMAKE_C_FLAGS:STRING="-O3" \-D CMAKE_CXX_FLAGS:STRING="-O3" \-D CMAKE_INSTALL_PREFIX:PATH=/home/lchen/trilinos \-D CMAKE_BUILD_TYPE:STRING=RELEASE \-D BLAS_LIBRARY_DIRS=/home/lchen/lapack/lib \-D LAPACK_LIBRARY_DIRS=/home/lchen/lapack/lib \/pmpi2/lchen/cesm/trilinos-11.6.1-Source No Fortran flags1CMAKE_Fortran_FLAGS:STRING= Compiling12345./create_newcase -case ../../test1 -res f45_g37 -compset X -mach platform -compiler intel./create_newcase -compset C -res T62_gx1v6 -mach platform -compiler intel -case ../../test2FC=mpif90 CXX=mpiCC CC=mpicc CPPFLAGS='-DNDEBUG -Df2cFortran' CFLAGS=-O FFLAGS='-O -W' F90FLAGS="-I/pmpi/archive/9.1.2.0/Linux/RTM/exports/linux_amd64_gcc/include" ./configure --prefix=/home/lchen/pnetcdf --with-mpi=/pmpi/archive/9.1.2.0/Linux/RTM/exports/linux_amd64_gcc --host=ibmgpu05]]></content>
+      <categories>
+        <category>MPI</category>
+      </categories>
+      <tags>
+        <tag>PMPI</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[Hexo Quick Start]]></title>
+    <url>%2F2018%2F06%2F22%2Fhello-world%2F</url>
+    <content type="text"><![CDATA[Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer in troubleshooting or you can ask me on GitHub. Quick StartCreate a new post1$ hexo new "My New Post" More info: Writing Run server1$ hexo server More info: Server Generate static files1$ hexo generate More info: Generating Deploy to remote sites1$ hexo deploy More info: Deployment]]></content>
+      <categories>
+        <category>网络前端</category>
+      </categories>
+      <tags>
+        <tag>Hexo</tag>
+      </tags>
+  </entry>
+</search>
