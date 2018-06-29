@@ -108,25 +108,25 @@
 
 
 
-  <meta name="description" content="PMPI - “ssh exchange identification: Connection closed by remote host” issueDescriptionSome time when we need start many mpid using ssh the system will complain ‘ssh_exchange_identification: Connectio">
-<meta name="keywords" content="PMPI">
+  <meta name="description" content="官方安装指南：https://www.tensorflow.org/install/install_windows 官方链接对于Tensorflow在Windows10平台的安装已经介绍的比较详细了，这里只是强调几个需要注意的地方。  Anaconda可以安装最新版本，而不是像以前所说必须安装Python3.5版。Anaconda需要在CUDA安装完成后再安装。 CUDA需要安装9.0版，如果没有">
+<meta name="keywords" content="Tensorflow">
 <meta property="og:type" content="article">
-<meta property="og:title" content="PMPI Connection closed by remote host issue">
-<meta property="og:url" content="http://blog.dankeer.com/2018/06/22/close-by-remote-issue/index.html">
+<meta property="og:title" content="WIN10环境下安装Tensorflow">
+<meta property="og:url" content="http://blog.dankeer.com/2018/06/29/tensorflow-inst-win10/index.html">
 <meta property="og:site_name" content="Dankeer&#39;s Blog">
-<meta property="og:description" content="PMPI - “ssh exchange identification: Connection closed by remote host” issueDescriptionSome time when we need start many mpid using ssh the system will complain ‘ssh_exchange_identification: Connectio">
+<meta property="og:description" content="官方安装指南：https://www.tensorflow.org/install/install_windows 官方链接对于Tensorflow在Windows10平台的安装已经介绍的比较详细了，这里只是强调几个需要注意的地方。  Anaconda可以安装最新版本，而不是像以前所说必须安装Python3.5版。Anaconda需要在CUDA安装完成后再安装。 CUDA需要安装9.0版，如果没有">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2018-06-22T10:05:04.697Z">
+<meta property="og:updated_time" content="2018-06-29T15:36:48.542Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="PMPI Connection closed by remote host issue">
-<meta name="twitter:description" content="PMPI - “ssh exchange identification: Connection closed by remote host” issueDescriptionSome time when we need start many mpid using ssh the system will complain ‘ssh_exchange_identification: Connectio">
+<meta name="twitter:title" content="WIN10环境下安装Tensorflow">
+<meta name="twitter:description" content="官方安装指南：https://www.tensorflow.org/install/install_windows 官方链接对于Tensorflow在Windows10平台的安装已经介绍的比较详细了，这里只是强调几个需要注意的地方。  Anaconda可以安装最新版本，而不是像以前所说必须安装Python3.5版。Anaconda需要在CUDA安装完成后再安装。 CUDA需要安装9.0版，如果没有">
 
 
 
 
 
 
-  <link rel="canonical" href="http://blog.dankeer.com/2018/06/22/close-by-remote-issue/"/>
+  <link rel="canonical" href="http://blog.dankeer.com/2018/06/29/tensorflow-inst-win10/"/>
 
 
 
@@ -136,7 +136,7 @@
   };
 </script>
 
-  <title>PMPI Connection closed by remote host issue | Dankeer's Blog</title>
+  <title>WIN10环境下安装Tensorflow | Dankeer's Blog</title>
   
 
 
@@ -328,7 +328,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://blog.dankeer.com/2018/06/22/close-by-remote-issue/">
+    <link itemprop="mainEntityOfPage" href="http://blog.dankeer.com/2018/06/29/tensorflow-inst-win10/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Dankeer">
@@ -345,7 +345,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">PMPI Connection closed by remote host issue
+          <h1 class="post-title" itemprop="name headline">WIN10环境下安装Tensorflow
               
             
           </h1>
@@ -370,7 +370,7 @@
                 
               
 
-              <time title="创建时间：2018-06-22 18:00:10 / 修改时间：18:05:04" itemprop="dateCreated datePublished" datetime="2018-06-22T18:00:10+08:00">2018-06-22</time>
+              <time title="创建时间：2018-06-29 23:22:30 / 修改时间：23:36:48" itemprop="dateCreated datePublished" datetime="2018-06-29T23:22:30+08:00">2018-06-29</time>
             
 
             
@@ -392,7 +392,7 @@
                 <span class="post-meta-item-text">分类于</span>
               
               
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/MPI/" itemprop="url" rel="index"><span itemprop="name">MPI</span></a></span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/人工智能/" itemprop="url" rel="index"><span itemprop="name">人工智能</span></a></span>
 
                 
                 
@@ -426,12 +426,15 @@
       
 
       
-        <h3 id="PMPI-“ssh-exchange-identification-Connection-closed-by-remote-host”-issue"><a href="#PMPI-“ssh-exchange-identification-Connection-closed-by-remote-host”-issue" class="headerlink" title="PMPI - “ssh exchange identification: Connection closed by remote host” issue"></a>PMPI - “ssh exchange identification: Connection closed by remote host” issue</h3><h4 id="Description"><a href="#Description" class="headerlink" title="Description"></a>Description</h4><p>Some time when we need start many mpid using ssh the system will complain ‘ssh_exchange_identification: Connection closed by remote host’ error. For example issues following command, on hpgpu01 and hpgpu02 there are 12 cores each.</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ mpirun -np 24 -hostlist hpgpu01,hpgpu02 hw</span><br></pre></td></tr></table></figure>
-<a id="more"></a>
-<h4 id="Solutions"><a href="#Solutions" class="headerlink" title="Solutions"></a>Solutions</h4><p>1) Change “MaxStartups” to values more than “10” in /etc/ssh/sshd_config.</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">MaxStartups 1000</span><br></pre></td></tr></table></figure>
-<p>2) Define a small value less than 20 of MPI_MAX_REMSH.</p>
+        <p>官方安装指南：<a href="https://www.tensorflow.org/install/install_windows" target="_blank" rel="noopener">https://www.tensorflow.org/install/install_windows</a></p>
+<p>官方链接对于Tensorflow在Windows10平台的安装已经介绍的比较详细了，这里只是强调几个需要注意的地方。</p>
+<ol>
+<li>Anaconda可以安装最新版本，而不是像以前所说必须安装Python3.5版。Anaconda需要在CUDA安装完成后再安装。</li>
+<li>CUDA需要安装9.0版，如果没有安装VS那么不需要勾选和VS编译环境集成的选项，否则会安装失败。</li>
+<li>CUDA安装完成并不需要用户手工设置%PATH%，这点和安装指南不同。</li>
+<li>Cudnn的安装文件需要手工复制到CUDA安装目录。</li>
+<li>Tensorflow在Anaconda中的安装过程如下<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">&gt; conda config --add channels https://mirrors.tuna.tsinghua.edu.cn/anaconda/pkgs/free/</span><br><span class="line">&gt; conda config --set show_channel_urls yes</span><br><span class="line">&gt; conda create -n tensorflow-gpu python=3.6</span><br><span class="line">&gt; conda activate tensorflow-gpu</span><br><span class="line">&gt; python -m pip install --upgrade pip</span><br><span class="line">&gt; pip install -i https://pypi.tuna.tsinghua.edu.cn/simple --upgrade tensorflow-gpu</span><br></pre></td></tr></table></figure></li>
+</ol>
 
       
     </div>
@@ -452,7 +455,7 @@
       
         <div class="post-tags">
           
-            <a href="/tags/PMPI/" rel="tag"># PMPI</a>
+            <a href="/tags/Tensorflow/" rel="tag"># Tensorflow</a>
           
         </div>
       
@@ -465,8 +468,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2018/06/22/fort90-pmpi/" rel="next" title="PMPI Fortran 90">
-                <i class="fa fa-chevron-left"></i> PMPI Fortran 90
+              <a href="/2018/06/27/git-commit-to-new-branch/" rel="next" title="上传本地分支到github项目分支">
+                <i class="fa fa-chevron-left"></i> 上传本地分支到github项目分支
               </a>
             
           </div>
@@ -474,10 +477,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2018/06/22/spec-inst/" rel="prev" title="Spec2007 Install">
-                Spec2007 Install <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -526,17 +525,8 @@
       
 
       
-        <ul class="sidebar-nav motion-element">
-          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
-            文章目录
-          </li>
-          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
-            站点概览
-          </li>
-        </ul>
-      
 
-      <section class="site-overview-wrap sidebar-panel">
+      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
@@ -631,22 +621,6 @@
         </div>
       </section>
 
-      
-      <!--noindex-->
-        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
-          <div class="post-toc">
-
-            
-              
-            
-
-            
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#PMPI-“ssh-exchange-identification-Connection-closed-by-remote-host”-issue"><span class="nav-number">1.</span> <span class="nav-text">PMPI - “ssh exchange identification: Connection closed by remote host” issue</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#Description"><span class="nav-number">1.1.</span> <span class="nav-text">Description</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Solutions"><span class="nav-number">1.2.</span> <span class="nav-text">Solutions</span></a></li></ol></li></ol></div>
-            
-
-          </div>
-        </section>
-      <!--/noindex-->
       
 
       
