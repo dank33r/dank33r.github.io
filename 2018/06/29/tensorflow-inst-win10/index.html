@@ -116,7 +116,7 @@
 <meta property="og:site_name" content="Dankeer&#39;s Blog">
 <meta property="og:description" content="官方安装指南：https://www.tensorflow.org/install/install_windows 官方链接对于Tensorflow在Windows10平台的安装已经介绍的比较详细了，这里只是强调几个需要注意的地方。  Anaconda可以安装最新版本，而不是像以前所说必须安装Python3.5版。Anaconda需要在CUDA安装完成后再安装。 CUDA需要安装9.0版，如果没有">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2018-06-29T15:36:48.542Z">
+<meta property="og:updated_time" content="2018-06-29T15:43:38.214Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="WIN10环境下安装Tensorflow">
 <meta name="twitter:description" content="官方安装指南：https://www.tensorflow.org/install/install_windows 官方链接对于Tensorflow在Windows10平台的安装已经介绍的比较详细了，这里只是强调几个需要注意的地方。  Anaconda可以安装最新版本，而不是像以前所说必须安装Python3.5版。Anaconda需要在CUDA安装完成后再安装。 CUDA需要安装9.0版，如果没有">
@@ -370,7 +370,7 @@
                 
               
 
-              <time title="创建时间：2018-06-29 23:22:30 / 修改时间：23:36:48" itemprop="dateCreated datePublished" datetime="2018-06-29T23:22:30+08:00">2018-06-29</time>
+              <time title="创建时间：2018-06-29 23:22:30 / 修改时间：23:43:38" itemprop="dateCreated datePublished" datetime="2018-06-29T23:22:30+08:00">2018-06-29</time>
             
 
             
@@ -432,7 +432,7 @@
 <li>Anaconda可以安装最新版本，而不是像以前所说必须安装Python3.5版。Anaconda需要在CUDA安装完成后再安装。</li>
 <li>CUDA需要安装9.0版，如果没有安装VS那么不需要勾选和VS编译环境集成的选项，否则会安装失败。</li>
 <li>CUDA安装完成并不需要用户手工设置%PATH%，这点和安装指南不同。</li>
-<li>Cudnn的安装文件需要手工复制到CUDA安装目录。</li>
+<li>Cudnn的安装文件需要手工复制到CUDA安装目录。<a id="more"></a></li>
 <li>Tensorflow在Anaconda中的安装过程如下<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">&gt; conda config --add channels https://mirrors.tuna.tsinghua.edu.cn/anaconda/pkgs/free/</span><br><span class="line">&gt; conda config --set show_channel_urls yes</span><br><span class="line">&gt; conda create -n tensorflow-gpu python=3.6</span><br><span class="line">&gt; conda activate tensorflow-gpu</span><br><span class="line">&gt; python -m pip install --upgrade pip</span><br><span class="line">&gt; pip install -i https://pypi.tuna.tsinghua.edu.cn/simple --upgrade tensorflow-gpu</span><br></pre></td></tr></table></figure></li>
 </ol>
 
