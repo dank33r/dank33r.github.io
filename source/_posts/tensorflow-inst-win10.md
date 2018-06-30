@@ -12,6 +12,7 @@ categories: 人工智能
 2. CUDA需要安装9.0版，如果没有安装VS那么不需要勾选和VS编译环境集成的选项，否则会安装失败。
 3. CUDA安装完成并不需要用户手工设置%PATH%，这点和安装指南不同。
 4. Cudnn的安装文件需要手工复制到CUDA安装目录。
+<!--more-->
 5. Tensorflow在Anaconda中的安装过程如下
 ```
 > conda config --add channels https://mirrors.tuna.tsinghua.edu.cn/anaconda/pkgs/free/
