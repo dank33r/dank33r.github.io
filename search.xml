@@ -3,7 +3,7 @@
   <entry>
     <title><![CDATA[WIN10环境下安装Tensorflow]]></title>
     <url>%2F2018%2F06%2F29%2Ftensorflow-inst-win10%2F</url>
-    <content type="text"><![CDATA[官方安装指南：https://www.tensorflow.org/install/install_windows 官方链接对于Tensorflow在Windows10平台的安装已经介绍的比较详细了，这里只是强调几个需要注意的地方。 Anaconda可以安装最新版本，而不是像以前所说必须安装Python3.5版。Anaconda需要在CUDA安装完成后再安装。 CUDA需要安装9.0版，如果没有安装VS那么不需要勾选和VS编译环境集成的选项，否则会安装失败。 CUDA安装完成并不需要用户手工设置%PATH%，这点和安装指南不同。 Cudnn的安装文件需要手工复制到CUDA安装目录。 Tensorflow在Anaconda中的安装过程如下123456&gt; conda config --add channels https://mirrors.tuna.tsinghua.edu.cn/anaconda/pkgs/free/&gt; conda config --set show_channel_urls yes&gt; conda create -n tensorflow-gpu python=3.6&gt; conda activate tensorflow-gpu&gt; python -m pip install --upgrade pip&gt; pip install -i https://pypi.tuna.tsinghua.edu.cn/simple --upgrade tensorflow-gpu]]></content>
+    <content type="text"><![CDATA[官方安装指南 官方链接对于Tensorflow在Windows10平台的安装已经介绍的比较详细了，这里只是强调几个需要注意的地方。 Anaconda可以安装最新版本，而不是像以前所说必须安装Python3.5版。Anaconda需要在CUDA安装完成后再安装。 CUDA需要安装9.0版，如果没有安装VS那么不需要勾选和VS编译环境集成的选项，否则会安装失败。 CUDA安装完成并不需要用户手工设置%PATH%，这点和安装指南不同。 Cudnn的安装文件需要手工复制到CUDA安装目录。 Tensorflow在Anaconda中的安装过程如下123456&gt; conda config --add channels https://mirrors.tuna.tsinghua.edu.cn/anaconda/pkgs/free/&gt; conda config --set show_channel_urls yes&gt; conda create -n tensorflow-gpu python=3.6&gt; conda activate tensorflow-gpu&gt; python -m pip install --upgrade pip&gt; pip install -i https://pypi.tuna.tsinghua.edu.cn/simple --upgrade tensorflow-gpu]]></content>
       <categories>
         <category>人工智能</category>
       </categories>
