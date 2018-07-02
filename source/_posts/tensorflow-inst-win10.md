@@ -5,7 +5,7 @@ tags: Tensorflow
 categories: 人工智能
 ---
 
-官方安装指南：https://www.tensorflow.org/install/install_windows
+[官方安装指南](https://www.tensorflow.org/install/install_windows)
 
 官方链接对于Tensorflow在Windows10平台的安装已经介绍的比较详细了，这里只是强调几个需要注意的地方。
 1. Anaconda可以安装最新版本，而不是像以前所说必须安装Python3.5版。Anaconda需要在CUDA安装完成后再安装。
